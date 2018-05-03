@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  db:
+    image: postgres:alpine
+    ports:
+      - "5433:5432"
+    expose:
+      - "5433"
+    environment:
+      POSTGRES_USER: "dev_user"
+      POSTGRES_PASSWORD: "dev_password"
+      POSTGRES_DB: "dev_db"
+
+  redis:
+    image: redis:4.0-alpine
