@@ -1,8 +1,11 @@
-# Django Boiler Plate
+# MeNu
 
-_A sane project starting point as outlined in [Two Scoops of Django](https://www.twoscoopspress.com/)._
+_A meal planning application._
 
-## Gettings Started
+## Working locally
+
+Use the `docker-compose.yml` file to have a clean/local postgres and redis install via `docker-compose up` from the project directory.
+
 Run the following to get started:
 ```commandline
 export DJANGO_SETTINGS_MODULE="config.settings.local"
