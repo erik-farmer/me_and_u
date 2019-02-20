@@ -2,13 +2,15 @@
 """
 
 from django.db import models
-from me_and_u.core.models import TimeStampedModel
+from tinymce.models import HTMLField
+from me_and_u.core.models import UUIDTimeStampedModel
 
-class Recipe(TimeStampedModel):
+class Recipe(UUIDTimeStampedModel):
     name = models.CharField(max_length=255)
     url = models.CharField(max_length=255)
-    ingredients = models.TextField()
-    steps = models.TextField()
+    ingredients = HTMLField()
+    steps = HTMLField()
+    notes = HTMLField()
 
     def __str__(self):
         return self.name
