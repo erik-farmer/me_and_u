@@ -25,4 +25,4 @@ DATABASES = {
 }
 if DEBUG:
     INSTALLED_APPS.extend(['debug_toolbar'])
-    # MIDDLEWARE.extend(['debug_toolbar.middleware.DebugToolbarMiddleware'])
+    MIDDLEWARE.extend(['debug_toolbar.middleware.DebugToolbarMiddleware'])

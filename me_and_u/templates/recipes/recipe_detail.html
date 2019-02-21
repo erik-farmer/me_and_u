@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+    {{ recipe.name }}<br/>
+    {{ recipe.url }}
+    {% autoescape off %}
+        {{ recipe.ingredients }}
+        {{ recipe.steps }}
+        {{ recipe.notes }}
+    {% endautoescape %}
+</body>
+</html>

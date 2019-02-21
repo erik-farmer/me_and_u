@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import include
 from django.urls import path
 
-from me_and_u.recipes import urls as recipe_urls
+from me_and_u.recipes.views import RecipeList
 
 urlpatterns = [
     path(
-        "", include(recipe_urls)
+        "", RecipeList.as_view(), name='recipe_list'
+    ),
+    path(
+        "recipes/", include('me_and_u.recipes.urls')
     ),
     path('admin/', admin.site.urls),
     path(

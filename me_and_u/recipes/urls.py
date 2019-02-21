@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.RecipeList.as_view(), name='recipe_list'),
+    path('<uuid:recipe_id>/', views.RecipeDetail.as_view(), name='recipe_detail'),
 ]
