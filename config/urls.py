@@ -17,6 +17,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include
 from django.urls import path
+from django.conf.urls.static import static
 
 from me_and_u.recipes.views import RecipeList
 
@@ -31,7 +32,7 @@ urlpatterns = [
     path(
         'tinymce/', include('tinymce.urls')
     ),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar

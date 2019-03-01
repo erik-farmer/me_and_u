@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail</title>
-</head>
-<body>
-    {{ recipe.name }}<br/>
-    {{ recipe.url }}
+{% extends "base.html" %}
+<h1>{{ recipe.name }}</h1>
+<a target=_blank href="{{ recipe.url }}">
+    recipe link
+</a>
+<hr/>
+{% block content %}
     {% autoescape off %}
+        <h2>Ingredients</h2>
         {{ recipe.ingredients }}
+        <h2>Steps</h2>
         {{ recipe.steps }}
+        <h2>Notes</h2>
         {{ recipe.notes }}
     {% endautoescape %}
-</body>
-</html>
+{% endblock %}

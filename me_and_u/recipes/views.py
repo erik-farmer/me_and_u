@@ -6,6 +6,7 @@ class RecipeList(ListView):
     def get_queryset(self):
         return Recipe.objects.all().values('public_id', 'name')
 
+
 class RecipeDetail(DetailView):
     template_name = 'recipes/recipe_detail.html'
 
