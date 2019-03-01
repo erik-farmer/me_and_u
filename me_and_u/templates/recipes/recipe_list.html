@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}meNu{% endblock %}
+{% block content %}
     <h1>Recipes</h1>
-    <ul>
+    <ul class="list-group">
     {% for recipe in object_list %}
-        <li>
+        <li class="list-group-item">
             <a href="recipes/{{ recipe.public_id }}">{{ recipe.name }}</a></li>
     {% empty %}
         <li>No recipes yet.</li>
     {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

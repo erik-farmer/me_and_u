@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block title %}
+    {{ recipe.name }}
+{% endblock %}
 <h1>{{ recipe.name }}</h1>
 <a target=_blank href="{{ recipe.url }}">
     recipe link
@@ -11,6 +14,10 @@
         <h2>Steps</h2>
         {{ recipe.steps }}
         <h2>Notes</h2>
-        {{ recipe.notes }}
+        {% if recipe.notes %}
+            {{ recipe.notes }}
+        {% else %}
+            'n/a'
+        {% endif %}
     {% endautoescape %}
 {% endblock %}
