@@ -2,12 +2,13 @@
 {% block title %}
     {{ recipe.name }}
 {% endblock %}
-<h1>{{ recipe.name }}</h1>
-<a target=_blank href="{{ recipe.url }}">
-    recipe link
-</a>
-<hr/>
+
 {% block content %}
+    <h1>{{ recipe.name }}</h1>
+    <a target=_blank href="{{ recipe.url }}">
+        recipe link
+    </a>
+    <hr/>
     {% autoescape off %}
         <h2>Ingredients</h2>
         {{ recipe.ingredients }}
