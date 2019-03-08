@@ -3,7 +3,7 @@ from .base import *
 import os
 import dj_database_url
 
-ALLOWED_HOSTS += ".herokuapp.com"
+ALLOWED_HOSTS += '*'
 
 DEBUG = False
 
