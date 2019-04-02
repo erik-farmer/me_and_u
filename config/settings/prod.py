@@ -14,3 +14,6 @@ DATABASES = {
 }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Force redirect (helpful on Heroku)
+SECURE_SSL_REDIRECT = True
