@@ -10,7 +10,7 @@ class Recipe(UUIDTimeStampedModel):
     url = models.CharField(max_length=255)
     ingredients = HTMLField()
     steps = HTMLField()
-    notes = HTMLField()
+    notes = HTMLField(blank=True)
 
     def __str__(self):
         return self.name
