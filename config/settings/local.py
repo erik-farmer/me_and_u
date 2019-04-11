@@ -23,6 +23,15 @@ DATABASES = {
         'PORT': '5433',
     }
 }
+
+# Caching instance
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+}
+
 if DEBUG:
     INSTALLED_APPS.extend(['debug_toolbar'])
     MIDDLEWARE.extend(['debug_toolbar.middleware.DebugToolbarMiddleware'])

@@ -15,6 +15,14 @@ DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
 }
 
+# Caching instance
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": os.environ.get('REDISCLOUD_URL'),
+    }
+}
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Force redirect (helpful on Heroku)
