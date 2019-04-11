@@ -2,6 +2,8 @@ from .base import *
 
 import os
 import dj_database_url
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 ALLOWED_HOSTS += '*'
 
@@ -17,3 +19,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Force redirect (helpful on Heroku)
 SECURE_SSL_REDIRECT = True
+
+# https://devcenter.heroku.com/articles/sentry#integrating-with-python-or-django
+# Viewed with `heroku addons:open sentry`
+sentry_sdk.init(
+    dsn=os.environ['SENTRY_DSN'],
+    integrations=[DjangoIntegration()]
+)
